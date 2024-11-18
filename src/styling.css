@@ -52,15 +52,9 @@
   color: var(--fg-color) !important;
 }
 
-/* Define --canvas for .nightMode (iphone, ipad) as mentioned in https://github.com/donkuri/lapis/issues/3#issuecomment-2453049969 */
-.iphone .nightMode,
-.ipad .nightMode {
-  --canvas: #2c2c2c;
-}
-
 .card.nightMode {
-  --bg-color: var(--canvas);
-  --fg-color: var(--fg);
+  --bg-color: var(--canvas, #2c2c2c);
+  --fg-color: var(--fg, #fcfcfc);
   --heiban: var(--dark-mode-heiban, initial);
   --atamadaka: var(--dark-mode-atamadaka, initial);
   --nakadaka: var(--dark-mode-nakadaka, initial);
