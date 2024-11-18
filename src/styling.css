@@ -112,11 +112,6 @@ html.mobile {
   --info-font-size: var(--mobile-info-font-size);
 }
 
-.mobile .nightMode {
-  color: #fff !important;
-  background-color: var(--canvas) !important;
-}
-
 #qa {
   display: flex;
   align-items: stretch;
