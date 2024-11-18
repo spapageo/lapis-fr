@@ -443,6 +443,7 @@
   function frequencyHover() {
       const hoverTrigger = document.querySelector('.freq-dropdown');
       const frequencyElement = document.querySelector('.freq-list-container');
+      if (hoverTrigger === null) return;
 
       hoverTrigger.addEventListener('mouseenter', function() {
           frequencyElement.innerHTML = `
