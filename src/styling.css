@@ -273,7 +273,7 @@ header {
   display: inline;
 }
 #pitch-tags {
-  color: var(--canvas);
+  color: var(--bg-color);
   font-family: var(--font-serif);
   background-color: var(--fg-color);
   display: none;
