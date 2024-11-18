@@ -60,7 +60,7 @@
 
 .card.nightMode {
   --bg-color: var(--canvas);
-  --fg-color: var(--fg-color);
+  --fg-color: var(--fg);
   --heiban: var(--dark-mode-heiban, initial);
   --atamadaka: var(--dark-mode-atamadaka, initial);
   --nakadaka: var(--dark-mode-nakadaka, initial);
@@ -216,7 +216,7 @@ header {
   top: 100%;
   right: 0;
   background-color: var(--tooltip-hover-color);
-  color: var(--fg);
+  color: var(--fg-color);
   padding: 10px;
   border-radius: 5px;
   z-index: 1000;
@@ -275,7 +275,7 @@ header {
 #pitch-tags {
   color: var(--canvas);
   font-family: var(--font-serif);
-  background-color: var(--fg);
+  background-color: var(--fg-color);
   display: none;
   vertical-align: top;
   padding: 1px 3px;
