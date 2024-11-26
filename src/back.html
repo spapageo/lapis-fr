@@ -399,7 +399,7 @@
     if ((selectionText.innerHTML.trim() == "" && `{{MainDefinition}}`) && isAllHtml(`{{MainDefinition}}`) == false) {
       selectionText.innerHTML = `<div id="primary">{{MainDefinition}}</div>`;
     }
-    else if (selectionText.innerHTML.trim() == "" && `{{MainDefinition}}` == "" || isAllHtml(`{{MainDefinition}}`) == true)
+    else if (selectionText.innerHTML.trim() == "" && (`{{MainDefinition}}` == "" || isAllHtml(`{{MainDefinition}}`) == true))
       selectionText.innerHTML = `<div id="glossaries">{{Glossary}}</div>`;
     }
 
