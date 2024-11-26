@@ -19,7 +19,7 @@
   </div>
 </header>
 
-<main>
+<main lang="ja">
   <div class="template">
 
     <!-- The first row (vocab box+picture) -->
@@ -97,7 +97,7 @@
 </main>
 
 <!----------- Footer ------------->
-<footer>
+<footer lang="ja">
   <br>
   <div class="bot-container">
     {{#Tags}}
@@ -443,6 +443,7 @@
   function frequencyHover() {
       const hoverTrigger = document.querySelector('.freq-dropdown');
       const frequencyElement = document.querySelector('.freq-list-container');
+      if (hoverTrigger === null) return;
 
       hoverTrigger.addEventListener('mouseenter', function() {
           frequencyElement.innerHTML = `
