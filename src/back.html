@@ -482,7 +482,9 @@
         style.type = 'text/css';
         const cssRules = `#glossaries li[data-dictionary="${dictionaryValue}"] { display:none !important; }`
         style.appendChild(document.createTextNode(cssRules));
-        document.head.appendChild(style);
+
+        let defContainer = document.querySelector("blockquote.main-def");
+        defContainer.appendChild(style);
     }
   }
 
