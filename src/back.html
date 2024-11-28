@@ -478,20 +478,22 @@
       return;
     }
 
-    let primaryElement = document.querySelector("#primary li[data-dictionary]");
-    console.log(primaryElement);
+    let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
+    console.log(primaryDicts);
 
-    if (primaryElement) {
-        let dictionaryValue = primaryElement.getAttribute("data-dictionary");
-        let style = document.createElement('style');
+    if (!primaryDicts) return;
+    
+    let style = document.createElement('style');
+    style.type = 'text/css';
 
-        style.type = 'text/css';
-        const cssRules = `#glossaries li[data-dictionary="${dictionaryValue}"] { display:none !important; }`
-        style.appendChild(document.createTextNode(cssRules));
+    const cssSelector = Array.from(primaryDicts).map( (dict) =>
+        `#glossaries li[data-dictionary="${dict.getAttribute("data-dictionary")}"]`
+    ).join(", ");
+    const cssRules = `${cssSelector} { display:none !important; }`;
+    style.appendChild(document.createTextNode(cssRules));
 
-        let defContainer = document.querySelector("blockquote.main-def");
-        defContainer.appendChild(style);
-    }
+    let defContainer = document.querySelector("blockquote.main-def");
+    defContainer.appendChild(style);
   }
 
   // Initialize all functions!!!
