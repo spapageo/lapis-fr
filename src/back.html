@@ -473,6 +473,11 @@
 
   // Hides the dictionary user selected in MainDefinition in Glossary field, if any
   function hideCorrectDefinition() {
+    // Do nothing if css rule already exists
+    if (document.querySelector("blockquote.main-def style")) {
+      return;
+    }
+
     let primaryElement = document.querySelector("#primary li[data-dictionary]");
     console.log(primaryElement);
 
