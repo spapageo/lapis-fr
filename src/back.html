@@ -386,10 +386,11 @@
     });
 
     document.addEventListener("keydown", (e) => {
+      const index_old = index;
       if (e.key === "ArrowLeft") index -= 1;
       else if (e.key === "ArrowRight") index += 1;
 
-      toggleDef(index);
+      if (index != index_old) toggleDef(index);
     });
   }
 
@@ -472,6 +473,11 @@
 
   // Hides the dictionary user selected in MainDefinition in Glossary field, if any
   function hideCorrectDefinition() {
+    // Do nothing if css rule already exists
+    if (document.querySelector("blockquote.main-def style")) {
+      return;
+    }
+
     let primaryElement = document.querySelector("#primary li[data-dictionary]");
     console.log(primaryElement);
 
@@ -482,7 +488,9 @@
         style.type = 'text/css';
         const cssRules = `#glossaries li[data-dictionary="${dictionaryValue}"] { display:none !important; }`
         style.appendChild(document.createTextNode(cssRules));
-        document.head.appendChild(style);
+
+        let defContainer = document.querySelector("blockquote.main-def");
+        defContainer.appendChild(style);
     }
   }
 
