@@ -355,7 +355,7 @@
     }
     else if (dictNames[currentIndex].toLowerCase().includes("primary definition")) {
       definitionContainer.innerHTML = `<div id="primary">{{MainDefinition}}</div>`;
-      reindexPrimaryDicts();
+      movePrimaryDicts();
       hideCorrectDefinition();
     }
     else if (dictNames[currentIndex].toLowerCase().includes("glossar"))
@@ -496,13 +496,12 @@
     defContainer.appendChild(style);
   }
 
-  function reindexPrimaryDicts() {
-      //fix indexes in primary
-      let dictLists = document.querySelectorAll("#primary .yomitan-glossary > ol");
-      dictLists = Array.from(dictLists).filter(ol => ol.getElementsByTagName("li").length > 0);
-      for (let idx = 1; idx < dictLists.length; idx++) {
-          dictLists[idx].start = idx + 1;
-      }
+  function movePrimaryDicts() {
+    let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
+    let firstList = document.querySelector("#primary .yomitan-glossary > ol");
+    for (let idx = 1; idx < primaryDicts.length; idx++) {
+        firstList.appendChild(primaryDicts[idx]);
+    }
   }
 
   // Initialize all functions!!!
@@ -516,7 +515,7 @@
     frequencyHover();
     setDHHeight();
     hideCorrectDefinition();
-    reindexPrimaryDicts();
+    movePrimaryDicts();
   }
 
   initialize();
