@@ -653,6 +653,10 @@ summary {
   padding-left: 0;
 }
 
+#primary ol > li[data-dictionary] > span > div {
+  display: inline;
+}
+
 /* Turn off italics */
 .definition i {
   font-style: normal;
