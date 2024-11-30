@@ -653,7 +653,8 @@ summary {
   padding-left: 0;
 }
 
-#primary ol > li[data-dictionary] > span > div {
+/* fix list-number for {jitendex-brief} */
+#primary li[data-dictionary]:not(:has(> i)) > span > div {
   display: inline;
 }
 
