@@ -498,7 +498,7 @@
 
   function movePrimaryDicts() {
     let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
-    let firstList = document.querySelector("#primary .yomitan-glossary > ol");
+    let firstList = document.querySelector("#primary .yomitan-glossary > ol:has( li[data-dictionary])");
     for (let idx = 1; idx < primaryDicts.length; idx++) {
         firstList.appendChild(primaryDicts[idx]);
     }
