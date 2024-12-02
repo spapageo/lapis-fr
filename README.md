@@ -23,16 +23,15 @@ Lapis was co-created by [Ruri](https://github.com/bewizible) and [kuri](https://
 2. The heavy amount of JavaScript on the card caused noticeable lag on mobile devices.
 3. Its dependency on handlebars meant it wasn’t compatible with tools that don’t support Yomitan or handlebars directly, like [JL](https://github.com/rampaa/JL).
 4. While uncommon, the use of custom handlebars and CSS to format definitions meant it sometimes would break dictionary formatting.
-6. The source code was auto-generated, making it a real challenge for both developers and non-developers alike to read and customize. This coupled with the complexity of the note meant it was very hard for people to contribute.
-7. The original developer of the note sadly went MIA in the summer of 2023, leaving arbyste alone to understand the codebase and fix potential issues. While arbyste has done outstanding work, no further development is planned except for bug fixing.
+5. The source code was auto-generated, making it a real challenge for both developers and non-developers alike to read and customize. This coupled with the complexity of the note meant it was very hard for people to contribute.
+6. The original developer of the note sadly went MIA in the summer of 2023, leaving arbyste alone to understand the codebase and fix potential issues. While arbyste has done outstanding work, no further development is planned except for bug fixing.
 
-At the same time, another great notetype caught our eyes, [rudnam](https://github.com/rudnam)'s excellent [JP-study](https://github.com/rudnam/JP-study). **Lapis was made to take the best of both worlds and avoid the issues mentioned above**. Ruri focused on the technical side of the project, writing the code and building the note, while kuri helped design the note, gave feedback and led the project. 
+At the same time, another great notetype caught our eyes, [rudnam](https://github.com/rudnam)'s excellent [JP-study](https://github.com/rudnam/JP-study). **Lapis was made to take the best of both worlds and avoid the issues mentioned above**. Ruri focused on the technical side of the project, writing the code and building the note, while kuri helped design the note, gave feedback and led the project.
 **We warmly welcome new contributors!**
-
 
 ## Key features
 
-- This card **doesn’t rely on custom handlebars** at all, meaning it fully supports every Japanese dictionary that Yomitan does, and the chance of something breaking is exceptionally rare.  
+- This card **doesn’t rely on custom handlebars** at all, meaning it fully supports every Japanese dictionary that Yomitan does, and the chance of something breaking is exceptionally rare.
 - You can easily select different types of cards using the `Is...Card` selectors. To do this, simply add an 'x' to the "Is...Card" field of your choice. Make sure to only select one of these. If you ever need to switch card types for many notes at once, you can use [Batch Editing](https://ankiweb.net/shared/info/291119185) to make the change quickly.
 - Lapis uses harmonic frequency ranking to create a `FreqSort` field you can use to re-order your new cards by frequency, either manually by using [Advanced Browser](https://ankiweb.net/shared/info/874215009) (see [this explanation](docs/manual_reordering.md) on how to do this), or automatically with [AutoReorder](https://ankiweb.net/shared/info/757527607). **Do be careful with the latter as there have been cases where AutoReorder has reset learned cards to 'new'.**
 - Lapis allows you to organizes dictionaries into different fields, making it easier to view information in an organized manner. You can easily choose which dictionaries you'd like to see first, more details [below](#how-to-use-the-card).
@@ -41,27 +40,27 @@ At the same time, another great notetype caught our eyes, [rudnam](https://githu
 
 To use Lapis, first download the example deck from [Releases](https://github.com/donkuri/lapis/releases). From there, you need to change your fields settings in Yomitan. Start by selecting `Lapis` as the `Model` in Yomitan's `Configure Anki Card Format`. Here is how your fields should be set up:
 
-| Field              | Value                                              |
-| ------------------ | -------------------------------------------------- |
-| Expression         | `{expression}`                                     |
-| ExpressionFurigana | `{furigana-plain}`                                 |
-| ExpressionReading  | `{reading}`                                        |
-| ExpressionAudio    | `{audio}`                                          |
-| SelectionText      | `{popup-selection-text}`                           |
+| Field              | Value                                                                                                                                                      |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Expression         | `{expression}`                                                                                                                                             |
+| ExpressionFurigana | `{furigana-plain}`                                                                                                                                         |
+| ExpressionReading  | `{reading}`                                                                                                                                                |
+| ExpressionAudio    | `{audio}`                                                                                                                                                  |
+| SelectionText      | `{popup-selection-text}`                                                                                                                                   |
 | MainDefinition     | Something like `{single-glossary-jmdict/jitendex}`. Find this by clicking the down arrow next to this field, and finding a dictionary in a similar format. |
-| Sentence           | `{cloze-prefix}<b>{cloze-body}</b>{cloze-suffix}`  |
-| SentenceFurigana   |                                                    |
-| SentenceAudio      |                                                    |
-| Picture            |                                                    |
-| Glossary           | `{glossary}`                                       |
-| Hint               |                                                    |
-| IsHintCard         |                                                    |
-| IsClickCard        |                                                    |
-| IsSentenceCard     |                                                    |
-| PitchPosition      | `{pitch-accent-positions}`                         |
-| Frequency          | `{frequencies}`                                    |
-| FreqSort           | `{frequency-harmonic-rank}`                        |
-| MiscInfo           |                                                    |
+| Sentence           | `{cloze-prefix}<b>{cloze-body}</b>{cloze-suffix}`                                                                                                          |
+| SentenceFurigana   |                                                                                                                                                            |
+| SentenceAudio      |                                                                                                                                                            |
+| Picture            |                                                                                                                                                            |
+| Glossary           | `{glossary}`                                                                                                                                               |
+| Hint               |                                                                                                                                                            |
+| IsHintCard         |                                                                                                                                                            |
+| IsClickCard        |                                                                                                                                                            |
+| IsSentenceCard     |                                                                                                                                                            |
+| PitchPosition      | `{pitch-accent-positions}`                                                                                                                                 |
+| Frequency          | `{frequencies}`                                                                                                                                            |
+| FreqSort           | `{frequency-harmonic-rank}`                                                                                                                                |
+| MiscInfo           |                                                                                                                                                            |
 
 In `MainDefinition`, what you get will depend on the version of JMdict or Jitendex you have. If you decide you do not want to use any bilingual dictionary, simply use your main monolingual dictionary there.
 
@@ -83,11 +82,11 @@ Please refer to [this](docs/updating_cards.md). We do not provide other updating
 
 The `is...Card` fields let you select the kind of card you want to use by placing 'x' (or anything really) in one of the fields. Without anything, you get plain old vocab cards. Please only use one selector to avoid bugs. Here are all the possible options:
 
-| Field selected        | Effect                                                                |
-| --------------------- | --------------------------------------------------------------------- |
-| isHintCard            | Uses the `Hint` field to give you a hint in the front of the card     |
-| isClickCard           | Makes the word in the front of the card clickable to get the sentence |
-| isSentenceCard        | The full sentence appears in the front instead of only the word       |
+| Field selected | Effect                                                                |
+| -------------- | --------------------------------------------------------------------- |
+| isHintCard     | Uses the `Hint` field to give you a hint in the front of the card     |
+| isClickCard    | Makes the word in the front of the card clickable to get the sentence |
+| isSentenceCard | The full sentence appears in the front instead of only the word       |
 
 ### Why three different fields for definitions?
 
@@ -103,7 +102,7 @@ Open an issue and tell us about it on the [issue tracker](https://github.com/don
 
 ### There's a weird 'yomitan' tag at the bottom of my card, what does this mean?
 
-No worries! This is an easy fix. Just make sure that `Card tags` in your Yomitan settings is empty, as it is usually filled with `yomitan` by default, which causes this issue. The notetype displays all tags on the note at the bottom of the card, which can be useful for marking the source of the card. For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **These tags aren’t added automatically, you will need to apply them manually if you want them. If you don't apply any tag, nothing will be rendered at the bottom.** 
+No worries! This is an easy fix. Just make sure that `Card tags` in your Yomitan settings is empty, as it is usually filled with `yomitan` by default, which causes this issue. The notetype displays all tags on the note at the bottom of the card, which can be useful for marking the source of the card. For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **These tags aren’t added automatically, you will need to apply them manually if you want them. If you don't apply any tag, nothing will be rendered at the bottom.**
 
 ### How do I add a note to the card?
 
@@ -111,32 +110,32 @@ You can use the `MiscInfo` field to add any extra information you'd like. It wil
 
 ### What is '{frequency-harmonic-rank}' and why is it used in FreqSort?
 
-For each card, `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's *true frequency* looks like.
+For each card, `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's _true frequency_ looks like.
 
 ### How can I change the font size for something?
 
 To change the font size, open the `Styling` section of the card in Anki by going to `Browse`, then select a Lapis card and then click on `Cards` (top-left of the card editor). Once there, look for the section at the top labeled `/* PC Font sizes */` or `/* Mobile font sizes */`, which should look like this:
 
 ```css
-  /* PC Font sizes */
-  --pc-main-font-size: 16px;
-  --pc-main-def-size: 20px;
-  --pc-vocab-font-size: 85px;
-  --pc-back-vocab-font-size: 60px;
-  --pc-sentence-font-size: 52px;
-  --pc-back-sentence-font-size: 35px;
-  --pc-hint-font-size: 38px;
-  --pc-info-font-size: 23px;
+/* PC Font sizes */
+--pc-main-font-size: 16px;
+--pc-main-def-size: 20px;
+--pc-vocab-font-size: 85px;
+--pc-back-vocab-font-size: 60px;
+--pc-sentence-font-size: 52px;
+--pc-back-sentence-font-size: 35px;
+--pc-hint-font-size: 38px;
+--pc-info-font-size: 23px;
 
-  /* Mobile font sizes */
-  --mobile-main-font-size: 16px;
-  --mobile-main-def-size: 16px;
-  --mobile-vocab-font-size: 70px;
-  --mobile-back-vocab-font-size: 32px;
-  --mobile-sentence-font-size: 38px;
-  --mobile-back-sentence-font-size: 24px;
-  --mobile-hint-font-size: 24px;
-  --mobile-info-font-size: 16px;
+/* Mobile font sizes */
+--mobile-main-font-size: 16px;
+--mobile-main-def-size: 16px;
+--mobile-vocab-font-size: 70px;
+--mobile-back-vocab-font-size: 32px;
+--mobile-sentence-font-size: 38px;
+--mobile-back-sentence-font-size: 24px;
+--mobile-hint-font-size: 24px;
+--mobile-info-font-size: 16px;
 ```
 
 You can adjust any of these `px` values to your preferred font size.
@@ -146,11 +145,27 @@ You can adjust any of these `px` values to your preferred font size.
 To change the font family, open the `Styling` section of the card in Anki by going to `Browse`, then select a Lapis card and then click on `Cards` (top-left of the card editor). In the `Styling` section, look for the part labeled `/* Miscellaneous */`, and you will see this:
 
 ```css
-  --font-serif: serif;
-  --font-sans: sans-serif;
-``` 
+--font-serif: serif;
+--font-sans: sans-serif;
+```
 
-You can replace these with any fonts you prefer, or leave them as is to use the default fonts your operating system uses. If you want a recommendation, we like Hiragino fonts (the default on macOS) and Noto CJK fonts. If you see Chinese instead of Japanese kanji or if you are unsure about this, read [this guide](https://learnjapanese.moe/font/). 
+You can replace these with any fonts you prefer, or leave them as is to use the default fonts your operating system uses. If you want a recommendation, we like Hiragino fonts (the default on macOS) and Noto CJK fonts. If you see Chinese instead of Japanese kanji or if you are unsure about this, read [this guide](https://learnjapanese.moe/font/).
+
+### How can I move the sentence on mobile?
+
+If you want to move a sentence above or below the definition on mobile, follow these steps:
+
+1. Open the `Cards...` section of the card in Anki by going to `Browse` and selecting a Lapis card.
+2. In the `Cards...` editor, click on the `Back Template`.
+3. Look for the block of code like this:
+
+   ![First Block](../assets/firstBlock.png)
+
+4. To move the sentence above the definition, move this block of code above the definition.
+
+   ![Second Block](../assets/secondBlock.png)
+
+However, if you want to move the sentence from above to below the definition, reverse this process.
 
 ### I have a question not covered in the FAQ!
 
