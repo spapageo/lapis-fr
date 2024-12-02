@@ -159,11 +159,11 @@ If you want to move a sentence above or below the definition on mobile, follow t
 2. In the `Cards...` editor, click on the `Back Template`.
 3. Look for the block of code like this:
 
-   ![First Block](../assets/firstBlock.png)
+   ![First Block](assets/firstBlock.png)
 
 4. To move the sentence above the definition, move this block of code above the definition.
 
-   ![Second Block](../assets/secondBlock.png)
+   ![Second Block](assets/secondBlock.png)
 
 However, if you want to move the sentence from above to below the definition, reverse this process.
 
