@@ -70,6 +70,20 @@
   --tooltip-hover-color: var(--dark-mode-tooltip-hover-color);
 }
 
+.android .nightMode {
+  --bg-color: black;
+  --fg-color: white;
+}
+
+.android .nightMode:not(.ankidroid_dark_mode) {
+  /* make it brighter since bg is black */
+  --bg-elevated: rgba(255, 255, 255, 0.06); 
+}
+
+.android .nightMode.ankidroid_dark_mode {
+  --bg-color: #303030;
+}
+
 .card:not(.nightMode) {
   --bg-color: var(--light-mode-bg-color);
   --fg-color: var(--light-mode-fg-color);
