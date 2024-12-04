@@ -9,8 +9,8 @@ Set up your fields according to the following table:
 | Field              | Value                                                                                                                                                      |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Expression         | `Primary Spelling`                                                                                                                                             |
-| ExpressionFurigana | `Nothing`                                                                                                                                         |
-| ExpressionReading  | `Readings`                                                                                                                                                |
+| ExpressionFurigana | `Primary Spelling and First Reading`                                                                                                                                         |
+| ExpressionReading  | `First Reading`                                                                                                                                                |
 | ExpressionAudio    | `Audio`                                                                                                                                                  |
 | SelectionText      | `Selected Definitions`                                                                                                                                   |
 | MainDefinition     | `Definitions`                   |
@@ -23,18 +23,14 @@ Set up your fields according to the following table:
 | IsHintCard         | `Nothing`                                                                                                                                                           |
 | IsClickCard        | `Nothing`                                                                                                                                                           |
 | IsSentenceCard     | `Nothing`                                                                                                                                                           |
-| PitchPosition      | `Pitch Accents (Numeric)`                                                                                                                                 |
+| PitchPosition      | `Pitch Accent for First Reading (Numeric)`                                                                                                                                 |
 | Frequency          | `Frequencies`                                                                                                                                            |
 | FreqSort           | `Frequency (Harmonic Mean)`                                                                                                                                |
 | MiscInfo           | `Nothing`                                                                                                                                                           |
 
 ## AJT Configuration
 
-JL doesn't have furigana support, so if you want the ExpressionFurigana and SentenceFurigana, you'll need to set up AJT to support them. To set up the Sentence Furigana, please see [AJT Japanese Setup](anki_setup.md). You'll also need to add a new profile to handle Expresion Furigana. In the AJT Options menu, click `Add` to add a new profile, and set it up like this:
-
-   <div align="center">
-     <img src="../assets/expFuriganaAJT.png">
-   </div>
+To set up the Sentence Furigana, please see [AJT Japanese Setup](anki_setup.md).
 
 ## Limitations
 
