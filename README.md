@@ -173,7 +173,7 @@ You can ask us a question by opening an issue on the [issue tracker](https://git
 
 ### Will this work with tools like JL?
 
-Technically, this should work without any issue with JL as it doesn't use any custom handlebars, but a setup guide is not currently provided. If you try it out, let us know! We will update this in due time.
+There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks: it doesn't support external dictionaries and you'll need to use [AJT Japanese](docs/anki_setup.md) to fill in all furigana. Otherwise, Lapis works well with JL.
 
 ## Credits
 
