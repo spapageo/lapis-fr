@@ -70,6 +70,20 @@
   --tooltip-hover-color: var(--dark-mode-tooltip-hover-color);
 }
 
+.android .nightMode {
+  --bg-color: black;
+  --fg-color: white;
+}
+
+.android .nightMode:not(.ankidroid_dark_mode) {
+  /* make it brighter since bg is black */
+  --bg-elevated: rgba(255, 255, 255, 0.06); 
+}
+
+.android .nightMode.ankidroid_dark_mode {
+  --bg-color: #303030;
+}
+
 .card:not(.nightMode) {
   --bg-color: var(--light-mode-bg-color);
   --fg-color: var(--light-mode-fg-color);
@@ -651,6 +665,11 @@ summary {
   display: inline;
   list-style: none;
   padding-left: 0;
+}
+
+/* fix list-number for {jitendex-brief} */
+#primary li[data-dictionary]:not(:has(> i)) > span > div {
+  display: inline;
 }
 
 /* Turn off italics */

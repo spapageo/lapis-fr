@@ -355,6 +355,7 @@
     }
     else if (dictNames[currentIndex].toLowerCase().includes("primary definition")) {
       definitionContainer.innerHTML = `<div id="primary">{{MainDefinition}}</div>`;
+      movePrimaryDicts();
       hideCorrectDefinition();
     }
     else if (dictNames[currentIndex].toLowerCase().includes("glossar"))
@@ -390,7 +391,7 @@
       if (e.key === "ArrowLeft") index -= 1;
       else if (e.key === "ArrowRight") index += 1;
 
-      if (index != index_old) toggleDef(index);
+      if (index !== index_old) toggleDef(index);
     });
   }
 
@@ -478,19 +479,28 @@
       return;
     }
 
-    let primaryElement = document.querySelector("#primary li[data-dictionary]");
-    console.log(primaryElement);
+    let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
+    console.log(primaryDicts);
+    if (primaryDicts.length === 0) return;
+    
+    let style = document.createElement('style');
+    style.type = 'text/css';
 
-    if (primaryElement) {
-        let dictionaryValue = primaryElement.getAttribute("data-dictionary");
-        let style = document.createElement('style');
+    const cssSelector = Array.from(primaryDicts).map( (dict) =>
+        `#glossaries li[data-dictionary="${dict.getAttribute("data-dictionary")}"]`
+    ).join(", ");
+    const cssRules = `${cssSelector} { display:none !important; }`;
+    style.appendChild(document.createTextNode(cssRules));
 
-        style.type = 'text/css';
-        const cssRules = `#glossaries li[data-dictionary="${dictionaryValue}"] { display:none !important; }`
-        style.appendChild(document.createTextNode(cssRules));
+    let defContainer = document.querySelector("blockquote.main-def");
+    defContainer.appendChild(style);
+  }
 
-        let defContainer = document.querySelector("blockquote.main-def");
-        defContainer.appendChild(style);
+  function movePrimaryDicts() {
+    let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
+    let firstList = document.querySelector("#primary .yomitan-glossary > ol:has( li[data-dictionary])");
+    for (let idx = 1; idx < primaryDicts.length; idx++) {
+        firstList.appendChild(primaryDicts[idx]);
     }
   }
 
@@ -505,6 +515,7 @@
     frequencyHover();
     setDHHeight();
     hideCorrectDefinition();
+    movePrimaryDicts();
   }
 
   initialize();
