@@ -13,21 +13,21 @@ An advanced yet lightweight [Anki](https://apps.ankiweb.net/) notetype, thoughtf
 - [Key Features](#key-features)
 - [How to use Lapis](#how-to-use-lapis)
 - [FAQ](#faq)
-  - [Anki, mining, what is that?](#what-is-all-this-anki-notetype-and-mining-stuff)
-  - [Sentence furigana](#how-do-i-set-up-sentence-furigana)
-  - [JPMN to Lapis switch](#how-do-i-switch-from-jpmn-to-lapis)
-  - [Using the various card types](#how-do-i-use-different-card-types)
-  - [What are the other definition fields?](#why-three-different-fields-for-definitions)
-  - [External (e.g. JL) support](#will-this-work-with-tools-like-jl)
-  - [Tag support](#can-i-use-tags)
-  - [Additional information on cards](#how-do-i-add-additional-information-to-the-card)
-  - [Frequency sorting](#what-is-frequency-sorting-and-does-lapis-support-it)
-  - [Font size](#how-can-i-change-the-font-size)
-  - [Different fonts](#how-can-i-change-the-fonts-used)
-  - [Bold color](#how-can-i-change-the-bold-color)
-  - [Moving the sentence on mobile](#how-can-i-move-the-sentence-on-mobile)
-  - [Help, there's a bug](#i-found-a-bug-where-can-i-report-it)
-  - [I have another question...](#i-have-a-question-not-covered-in-the-faq)
+  - [What is all this Anki, notetype and mining stuff?](#what-is-all-this-anki-notetype-and-mining-stuff)
+  - [How do I set up sentence furigana?](#how-do-i-set-up-sentence-furigana)
+  - [How do I switch from JPMN to Lapis?](#how-do-i-switch-from-jpmn-to-lapis)
+  - [How do I use the various card types?](#how-do-i-use-different-card-types)
+  - [Why three different fields for definitions?](#why-three-different-fields-for-definitions)
+  - [Will this work with tools like JL?](#will-this-work-with-tools-like-jl)
+  - [How does tagging work in Lapis?](#can-i-use-tags)
+  - [How do I add additional info to the card?](#how-do-i-add-additional-information-to-the-card)
+  - [Does Lapis support frequency sorting?](#what-is-frequency-sorting-and-does-lapis-support-it)
+  - [How can I change the font size?](#how-can-i-change-the-font-size)
+  - [How can I change the fonts used?](#how-can-i-change-the-fonts-used)
+  - [How can I change the bold color?](#how-can-i-change-the-bold-color)
+  - [How can I move the sentence on mobile?](#how-can-i-move-the-sentence-on-mobile)
+  - [I found a bug, where can I report it?](#i-found-a-bug-where-can-i-report-it)
+  - [I have a question not covered in the FAQ](#i-have-a-question-not-covered-in-the-faq)
 - [Credits](#credits)
 
 ## Why was Lapis created?
@@ -93,7 +93,7 @@ Please refer to [this](docs/anki_setup.md).
 
 Please refer to [this](docs/updating_cards.md). We do not provide other updating guides for every other notes, but this might give you enough information to figure it out on your own.
 
-### How do I use different card types?
+### How do I use the various card types?
 
 The `is...Card` fields let you select the kind of card you want to use by placing 'x' (or anything really) in one of the fields. Without anything, you get plain old vocab cards. Please only use one selector to avoid bugs. Here are all the possible options:
 
@@ -113,20 +113,20 @@ This is partly inspired by JPMN and its method of organizing dictionaries. There
 
 ### Will this work with tools like JL?
 
-There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks: it doesn't support external dictionaries and you'll need to use [AJT Japanese](docs/anki_setup.md) to fill in all furigana. Otherwise, Lapis works well with JL.
+There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks: it doesn't support external dictionaries and you'll need to use [AJT Japanese](docs/anki_setup.md) to fill in all furigana. Otherwise, Lapis works well with JL. In general, **Lapis should work well with tools that support Yomitan dictionaries but not custom handlebars**.
 
-### Can I use tags?
+### How does tagging work in Lapis?
 
 Tags are not added automatically, so you need to add them yourselves in the `Tags` section of Anki. They will appear at the bottom of the card. 
 For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **By default, Yomitan adds a `yomitan` or `yomichan` tag to each of your cards**, you might want to remove that by going to the `Anki` section in your Yomitan settings and taking out the Card tags (it should have `yomitan` or `yomichan` filled in).
 
-### How do I add additional information to the card?
+### How do I add additional info to the card?
 
 You can use the `MiscInfo` field to add any extra information you'd like. It will then appear at the bottom of the back of the card.
 
-### What is frequency sorting, and does Lapis support it?
+### Does Lapis support frequency sorting?
 
-For an explanation of what frequency sorting is, read [this](https://donkuri.github.io/learn-japanese/mining/#using-frequency-sorting). Basically, for each card `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's _true frequency_ looks like. That is what gets added to `FreqSort` and that is what you need to order by.
+Yes, using the `FreqSort` field. For an explanation of what frequency sorting is, read [this](https://donkuri.github.io/learn-japanese/mining/#using-frequency-sorting). Basically, for each card `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's _true frequency_ looks like. That is what gets added to `FreqSort` and that is what you need to order by.
 
 ### How can I change the font size?
 
@@ -191,7 +191,7 @@ However, if you want to move the sentence from above to below the definition, re
 
 Open an issue and tell us about it on the [issue tracker](https://github.com/donkuri/lapis/issues), we will be more than happy to help you!
 
-### I have a question not covered in the FAQ!
+### I have a question not covered in the FAQ
 
 You can ask us a question by opening an issue on the [issue tracker](https://github.com/donkuri/lapis/issues).
 
