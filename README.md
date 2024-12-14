@@ -169,7 +169,7 @@ You can replace these with any fonts you prefer, or leave them as is to use the 
 
 ### How can I change the bold color?
 
-In case you have the sentence in front with the word bolded, it is bolded in gray. If you want to change that color, look for `#7d8590` (it's after a `--bold:` block) and change it for whatever color you want by inputting the hexcode corresponding to that color. You can find a hexcode selectors online if you don't know what your color is.
+In case you have the sentence in front with the word bolded, it is bolded in gray. If you want to change that color and you're using the dark theme, look for `--bold: #7d8590;` and change the hexcode to whatever color you want by inputting the hexcode corresponding to that color. For the light theme, it's under `--bold: #999999;`. You can find a hexcode selectors online if you don't know what your color is.
 
 ### How can I move the sentence on mobile?
 
