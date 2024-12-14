@@ -13,6 +13,21 @@ An advanced yet lightweight [Anki](https://apps.ankiweb.net/) notetype, thoughtf
 - [Key Features](#key-features)
 - [How to use Lapis](#how-to-use-lapis)
 - [FAQ](#faq)
+  - [Anki, mining, what is that?](#what-is-all-this-anki-notetype-and-mining-stuff)
+  - [Sentence furigana](#how-do-i-set-up-ajt-sentence-furigana)
+  - [JPMN to Lapis switch](#how-do-i-switch-from-jpmn-to-lapis)
+  - [Using the various card types](#how-do-i-use-different-card-types)
+  - [What are the other definition fields?](#why-three-different-fields-for-definitions)
+  - [External (e.g. JL) support](#will-this-work-with-tools-like-jl)
+  - [Tag support](#can-i-use-tags)
+  - [Additional information on cards](#how-do-i-add-additional-information-to-the-card)
+  - [Frequency sorting](#what-is-frequency-sorting-and-does-lapis-support-it)
+  - [Font size](#how-can-i-change-the-font-size)
+  - [Different fonts](#how-can-i-change-the-fonts-used)
+  - [Bold color](#how-can-i-change-the-bold-color)
+  - [Moving the sentence on mobile](#how-can-i-move-the-sentence-on-mobile)
+  - [Help, there's a bug](#i-found-a-bug-where-can-i-report-it)
+  - [I have another question...](#i-have-a-question-not-covered-in-the-faq)
 - [Credits](#credits)
 
 ## Why was Lapis created?
@@ -66,11 +81,11 @@ In `MainDefinition`, what you get will depend on the version of JMdict or Jitend
 
 ## FAQ
 
-### What's all this Anki, notetype and mining stuff?
+### What is all this Anki, notetype and mining stuff?
 
 Please read the [guide](https://donkuri.github.io/learn-japanese/guide/). For mining, see the [mining setups](https://donkuri.github.io/learn-japanese/mining/).
 
-### How do I setup AJT Japanese to work with Lapis?
+### How do I set up sentence furigana?
 
 Please refer to [this](docs/anki_setup.md).
 
@@ -96,23 +111,24 @@ This is partly inspired by JPMN and its method of organizing dictionaries. There
 - `MainDefinition` – This is where you input the main dictionary you prefer. I highly recommend filling this in. If you're new to Japanese or mining on your own, it’s a good idea to start with a bilingual dictionary like JMDict/Jitendex. Alternatively, you can use your preferred monolingual dictionaries (such as 三省堂, 大辞林, 大辞泉...) by selecting them when configuring Yomitan. **Please note, the dictionaries need to be installed in Yomitan before they can be selected.**
 - `Glossary` – This is where you place all of your dictionary definitions. We recommend having more than a single dictionary, see [here](https://donkuri.github.io/learn-japanese/setup/#adding-dictionaries). **If you choose to use only a single dictionary, make sure it is selected in `MainDefinition` and leave this field EMPTY to avoid a known bug.**
 
-### I found a bug, where can I report it?
+### Will this work with tools like JL?
 
-Open an issue and tell us about it on the [issue tracker](https://github.com/donkuri/lapis/issues), we will be more than happy to help you!
+There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks: it doesn't support external dictionaries and you'll need to use [AJT Japanese](docs/anki_setup.md) to fill in all furigana. Otherwise, Lapis works well with JL.
 
-### There's a weird 'yomitan' tag at the bottom of my card, what does this mean?
+### Can I use tags?
 
-No worries! This is an easy fix. Just make sure that `Card tags` in your Yomitan settings is empty, as it is usually filled with `yomitan` by default, which causes this issue. The notetype displays all tags on the note at the bottom of the card, which can be useful for marking the source of the card. For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **These tags aren’t added automatically, you will need to apply them manually if you want them. If you don't apply any tag, nothing will be rendered at the bottom.**
+Tags are not added automatically, so you need to add them yourselves in the `Tags` section of Anki. They will appear at the bottom of the card. 
+For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **By default, Yomitan adds a `yomitan` or `yomichan` tag to each of your cards**, you might want to remove that by going to the `Anki` section in your Yomitan settings and taking out the Card tags (it should have `yomitan` or `yomichan` filled in).
 
-### How do I add a note to the card?
+### How do I add additional information to the card?
 
 You can use the `MiscInfo` field to add any extra information you'd like. It will then appear at the bottom of the back of the card.
 
-### What is '{frequency-harmonic-rank}' and why is it used in FreqSort?
+### What is frequency sorting, and does Lapis support it?
 
-For each card, `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's _true frequency_ looks like.
+For an explanation of what frequency sorting is, read [this](https://donkuri.github.io/learn-japanese/mining/#using-frequency-sorting). Basically, for each card `{frequency-harmonic-rank}` computes the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean) of all the frequencies on that card. It is often used when working with ratios and it approaches what the word's _true frequency_ looks like. That is what gets added to `FreqSort` and that is what you need to order by.
 
-### How can I change the font size for something?
+### How can I change the font size?
 
 To change the font size, open the `Styling` section of the card in Anki by going to `Browse`, then select a Lapis card and then click on `Cards` (top-left of the card editor). Once there, look for the section at the top labeled `/* PC Font sizes */` or `/* Mobile font sizes */`, which should look like this:
 
@@ -171,13 +187,13 @@ If you want to move a sentence above or below the definition on mobile, follow t
 
 However, if you want to move the sentence from above to below the definition, reverse this process.
 
+### I found a bug, where can I report it?
+
+Open an issue and tell us about it on the [issue tracker](https://github.com/donkuri/lapis/issues), we will be more than happy to help you!
+
 ### I have a question not covered in the FAQ!
 
 You can ask us a question by opening an issue on the [issue tracker](https://github.com/donkuri/lapis/issues).
-
-### Will this work with tools like JL?
-
-There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks: it doesn't support external dictionaries and you'll need to use [AJT Japanese](docs/anki_setup.md) to fill in all furigana. Otherwise, Lapis works well with JL.
 
 ## Credits
 
