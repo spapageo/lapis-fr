@@ -151,6 +151,10 @@ To change the font family, open the `Styling` section of the card in Anki by goi
 
 You can replace these with any fonts you prefer, or leave them as is to use the default fonts your operating system uses. If you want a recommendation, we like Hiragino fonts (the default on macOS) and Noto CJK fonts. If you see Chinese instead of Japanese kanji or if you are unsure about this, read [this guide](https://learnjapanese.moe/font/).
 
+### How can I change the bold color?
+
+In case you have the sentence in front with the word bolded, it is bolded in gray. If you want to change that color, look for `#7d8590` (it's after a `--bold:` block) and change it for whatever color you want by inputting the hexcode corresponding to that color. You can find a hexcode selectors online if you don't know what your color is.
+
 ### How can I move the sentence on mobile?
 
 If you want to move a sentence above or below the definition on mobile, follow these steps:
