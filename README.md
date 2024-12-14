@@ -14,7 +14,7 @@ An advanced yet lightweight [Anki](https://apps.ankiweb.net/) notetype, thoughtf
 - [How to use Lapis](#how-to-use-lapis)
 - [FAQ](#faq)
   - [Anki, mining, what is that?](#what-is-all-this-anki-notetype-and-mining-stuff)
-  - [Sentence furigana](#how-do-i-set-up-ajt-sentence-furigana)
+  - [Sentence furigana](#how-do-i-set-up-sentence-furigana)
   - [JPMN to Lapis switch](#how-do-i-switch-from-jpmn-to-lapis)
   - [Using the various card types](#how-do-i-use-different-card-types)
   - [What are the other definition fields?](#why-three-different-fields-for-definitions)
