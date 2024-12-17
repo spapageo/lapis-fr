@@ -17,6 +17,7 @@ An advanced yet lightweight [Anki](https://apps.ankiweb.net/) notetype, thoughtf
   - [How do I set up sentence furigana?](#how-do-i-set-up-sentence-furigana)
   - [How do I switch from JPMN to Lapis?](#how-do-i-switch-from-jpmn-to-lapis)
   - [How do I use the various card types?](#how-do-i-use-different-card-types)
+  - [What does `Hint` do?](#what-does-hint-do)
   - [Why three different fields for definitions?](#why-three-different-fields-for-definitions)
   - [Will this work with tools like JL?](#will-this-work-with-tools-like-jl)
   - [How does tagging work in Lapis?](#can-i-use-tags)
@@ -68,7 +69,7 @@ To use Lapis, first download the example deck from [Releases](https://github.com
 | SentenceAudio      |                                                                                                                                                            |
 | Picture            |                                                                                                                                                            |
 | Glossary           | `{glossary}`                                                                                                                                               |
-| Hint               |                                                                                                                                                            |
+| Hint               | To understand the usage of this field, refer to [this](#what-does-hint-do)                                                                                 |
 | IsHintCard         |                                                                                                                                                            |
 | IsClickCard        |                                                                                                                                                            |
 | IsSentenceCard     |                                                                                                                                                            |
@@ -99,9 +100,27 @@ The `is...Card` fields let you select the kind of card you want to use by placin
 
 | Field selected | Effect                                                                |
 | -------------- | --------------------------------------------------------------------- |
-| isHintCard     | Uses the `Hint` field to give you a hint in the front of the card     |
+| IsHintCard     | Displays the `Sentence` field as a hint below the word on the front.  |
 | isClickCard    | Makes the word in the front of the card clickable to get the sentence |
 | isSentenceCard | The full sentence appears in the front instead of only the word       |
+
+### What does `Hint` do?
+
+The `Hint` field, inspired by Animecards, serves as a tool to provide additional clarification during reviews. You can learn more about it [here](https://animecards.site/ankicards/).
+
+Here’s a brief overview of its usage as described on the Animecards site:
+
+- **Disambiguating readings**: The `Hint` field can help clarify the correct reading when context alone isn’t enough.
+  - 武士 (ぶし - もののふ)
+  - 海風 (かいふう - うみかぜ)
+  - 悪口 (あっこう - わるくち)
+
+Tip: To differentiate between readings, you can specify **音読み** (on'yomi) and **訓読み** (kun'yomi) in the `Hint` field when necessary.
+- **Words appearing only in certain contexts**: Some words commonly appear in specific phrases or expressions. Since this context is usually consistent, it’s fine to include it as a hint.
+- **Onomatopoeic or kana words**: For words written without kanji, where no semantic clues are provided, adding a hint with context can make the meaning clearer.
+- **Making cards easier**: If kanji alone don't provide enough information, or you’ve failed a card repeatedly, the `Hint` field can make reviews more manageable. Use this as a last resort when necessary.
+
+You can read the full explanation [here](https://animecards.site/ankicards/#the-hint-field).
 
 ### Why three different fields for definitions?
 
@@ -117,7 +136,7 @@ There is a [Setup Guide for JL](docs/jl_setup.md). JL has a couple of drawbacks:
 
 ### How does tagging work in Lapis?
 
-Tags are not added automatically, so you need to add them yourselves in the `Tags` section of Anki. They will appear at the bottom of the card. 
+Tags are not added automatically, so you need to add them yourselves in the `Tags` section of Anki. They will appear at the bottom of the card.
 For example, the card in the example deck has the tag アニメ:小市民シリーズ at the bottom, indicating [the source](https://anilist.co/anime/173295/Shoushimin-Series). **By default, Yomitan adds a `yomitan` or `yomichan` tag to each of your cards**, you might want to remove that by going to the `Anki` section in your Yomitan settings and taking out the Card tags (it should have `yomitan` or `yomichan` filled in).
 
 ### How do I add additional info to the card?
