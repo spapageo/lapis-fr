@@ -358,11 +358,6 @@
         const primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
         const glossariesDicts = document.querySelectorAll("#glossaries li[data-dictionary]");
         return primaryDicts.length === glossariesDicts.length
-        /*
-        const primaryDictsNames = Array.from(primaryDicts).map( li => li.getAttribute("data-dictionary") );
-        const glossariesDictsNames = Array.from(glossariesDicts).map( li => li.getAttribute("data-dictionary") );
-        return glossariesDictsNames.every( li => primaryDictsNames.includes(li) ); 
-        */
     }
 
     // Removes Unnecessary definitions
@@ -370,15 +365,12 @@
         const primary = document.getElementById("primary");
         const glossaries = document.getElementById("glossaries");
         if (primary && primary.textContent === "" ) {
-            console.log("primary empty");
             primary.remove()
         }
         if (glossaries && glossaries.textContent === "") {
-            console.log("gloss empty");
             glossaries.remove()
         }
         else if (primary && glossaries && isPrimaryEqualToGloss()) {
-            console.log("gloss = primary");
             glossaries.remove()
         }
     }
@@ -419,7 +411,6 @@
         if (definitions.length < 2) return;
 
         let mainDefContainer = document.querySelector(".main-def");
-
         const leftEdge = document.createElement("div");
         const rightEdge = document.createElement("div");
         leftEdge.classList.add("left-edge");
@@ -460,7 +451,7 @@
             selectionText.innerHTML = `<div id="glossaries">{{Glossary}}</div>`;
     }
 
-  // This just handles clicking and showing images
+    // This just handles clicking and showing images
     function clickImage() {
         const modalBg = document.querySelector(".modal-bg");
         const imgPopup = document.querySelector(".img-popup");
@@ -535,17 +526,17 @@
         let primaryDicts = document.querySelectorAll("#primary li[data-dictionary]");
         if (primaryDicts.length === 0) return;
 
-            let style = document.createElement('style');
-            style.type = 'text/css';
+        let style = document.createElement('style');
+        style.type = 'text/css';
 
-            const cssSelector = Array.from(primaryDicts).map((dict) =>
-                `#glossaries li[data-dictionary="${dict.getAttribute("data-dictionary")}"]`
-            ).join(", ");
-            const cssRules = `${cssSelector} { display:none !important; }`;
-            style.appendChild(document.createTextNode(cssRules));
+        const cssSelector = Array.from(primaryDicts).map((dict) =>
+            `#glossaries li[data-dictionary="${dict.getAttribute("data-dictionary")}"]`
+        ).join(", ");
+        const cssRules = `${cssSelector} { display:none !important; }`;
+        style.appendChild(document.createTextNode(cssRules));
 
-            let defContainer = document.querySelector("blockquote.main-def");
-            defContainer.appendChild(style);
+        let defContainer = document.querySelector("blockquote.main-def");
+        defContainer.appendChild(style);
     }
 
     // Moves Primary Dicts into the same list
