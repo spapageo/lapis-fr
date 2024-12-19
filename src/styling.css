@@ -15,6 +15,10 @@
     --light-mode-odaka: #61ad3b;
     --light-mode-kifuku: #7e53c4;
 
+    /* Bold color */
+    --light-mode-bold: #999999;
+    --dark-mode-bold: #7d8590;
+
     /* PC Font sizes */
     --pc-main-font-size: 16px;
     --pc-main-def-size: 20px;
@@ -64,7 +68,7 @@
     --bg-elevated: rgba(0, 0, 0, 0.12);
     --bg-inset: rgba(255, 255, 255, 0.03);
     --fg-subtle: rgba(255, 255, 255, 0.3);
-    --bold: #7d8590;
+    --bold: var(--dark-mode-bold, #7d8590);
 
     --image-brightness: var(--dark-mode-image-brightness);
     --tooltip-hover-color: var(--dark-mode-tooltip-hover-color);
@@ -96,7 +100,7 @@
     --bg-elevated: rgba(0, 0, 0, 0.03);
     --bg-inset: rgba(0, 0, 0, 0.06);
     --fg-subtle: rgba(0, 0, 0, 0.6);
-    --bold: #999999;
+    --bold: var(--light-mode-bold, #999999);
 
     --image-brightness: var(--light-mode-image-brightness);
     --tooltip-hover-color: var(--light-mode-tooltip-hover-color);
