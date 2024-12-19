@@ -734,7 +734,7 @@ li[data-dictionary^="JMdict"] i {
 }
 
 .definition .hidden {
-  display: none
+    display: none
 }
 
 /* backwards compatibility code for JPMN definitions */
