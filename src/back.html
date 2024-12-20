@@ -122,7 +122,7 @@
         const kana = `{{kana:ExpressionFurigana}}` || `{{ExpressionReading}}`;
         return (
             kana !== null &&
-            kana.replace(/[ャュョゃゅょ]/g, "").length === pitchNumber
+            kana.replace(/[ャュョィゃゅょぃ]/g, "").length === pitchNumber
         );
     }
 
@@ -197,7 +197,7 @@
         let currentChar = "";
         let nextChar = "";
         const groupedMoras = [];
-        const check = ["ャ", "ュ", "ョ", "ゃ", "ゅ", "ょ"];
+        const check = ["ャ", "ュ", "ョ", "ィ", "ゃ", "ゅ", "ょ", "ぃ"];
 
         for (let i = 0; i < kana.length; i++) {
             currentChar = kana[i];
