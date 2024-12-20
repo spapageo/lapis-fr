@@ -330,12 +330,6 @@
         pitchTags.appendChild(pitchTagList);
     }
 
-    // Helper function to check if a field is just html without any content
-    function isAllHtml(content) {
-        const strippedContent = content.replace(/<\/?[^>]+(>|$)/g, "").trim();
-        return strippedContent === "" && content.match(/<\/?[^>]+(>|$)/g) !== null;
-    }
-
 
     function isPrimaryEqualToGloss() {
         const isJPMNConverted = document.querySelector(".definition li[data-details]");
@@ -441,16 +435,6 @@
         document.head.classList.add("has-listener");
     }
 
-    // By default, it's going to be SelectionText in that field, but what if it is empty i.e user has not selected any text?
-    function showCorrectDef() {
-        const selectionText = document.querySelector(".main-def > .definition");
-        if ((selectionText.innerHTML.trim() == "" && `{{MainDefinition}}`) && isAllHtml(`{{MainDefinition}}`) == false) {
-            selectionText.innerHTML = `<div id="primary">{{MainDefinition}}</div>`;
-        }
-        else if (selectionText.innerHTML.trim() == "" && (`{{MainDefinition}}` == "" || isAllHtml(`{{MainDefinition}}`) == true))
-            selectionText.innerHTML = `<div id="glossaries">{{Glossary}}</div>`;
-    }
-
     // This just handles clicking and showing images
     function clickImage() {
         const modalBg = document.querySelector(".modal-bg");
@@ -554,7 +538,6 @@
         paintTargetWord();
         constructPitch();
         setUpDefToggle();
-        //showCorrectDef();
         clickImage();
         frequencyHover();
         setDHHeight();
